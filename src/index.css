@@ -45,3 +45,29 @@ body {
 .page {
   padding: 62px 24px 0;
 }
+.page {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #03a9f4;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.page.transition-appear {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.page.transition-appear.transition-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.page.transition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.page.transition-leave.transition-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}

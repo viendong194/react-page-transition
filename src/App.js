@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link,Route} from 'react-router-dom';
+import {Link,Route,Switch} from 'react-router-dom';
 // import TransitionGroup from "react-transition-group/TransitionGroup";
 import PageTransition from 'react-router-page-transition';
 
@@ -15,8 +15,12 @@ class App extends Component {
           <Link to="/">Home</Link>
           <Link to="/second">Second</Link>
         </div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/second" component={Second} />
+        <PageTransition timeout={500}>
+          <Switch location={this.props.location}>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/second" component={Second} />
+          </Switch>
+        </PageTransition>
       </div>
     );
   }

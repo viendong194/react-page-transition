@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link,Route} from 'react-router-dom';
-import TransitionGroup from "react-transition-group/TransitionGroup";
+// import TransitionGroup from "react-transition-group/TransitionGroup";
+import PageTransition from 'react-router-page-transition';
 
 import './index.css';
 import Home from './pages/home';

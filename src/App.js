@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {Link,Route,Switch} from 'react-router-dom';
+import { TransitionGroup,CSSTransition } from 'react-transition-group'
 // import TransitionGroup from "react-transition-group/TransitionGroup";
-import PageTransition from 'react-router-page-transition';
+// import PageTransition from 'react-router-page-transition';
 
 import './index.css';
-import Home from './pages/home';
-import Second from './pages/second';
+import Routes from './Route/routes';
 
 class App extends Component {
   render() {
@@ -15,12 +15,7 @@ class App extends Component {
           <Link to="/">Home</Link>
           <Link to="/second">Second</Link>
         </div>
-        <PageTransition timeout={500}>
-          <Switch location={this.props.location}>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/second" component={Second} />
-          </Switch>
-        </PageTransition>
+        <Routes />
       </div>
     );
   }

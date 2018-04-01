@@ -6,6 +6,7 @@ export default class Second extends Component {
       <div className="transition-item page">
         <h1>Second Page</h1>
         <p>This is second page</p>
+        <Link to="/">Go to home</Link>
       </div>
     )
   }

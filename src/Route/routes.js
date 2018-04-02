@@ -10,16 +10,16 @@ class Routes extends Component {
     render(){
         return(
             <TransitionGroup>
-            <CSSTransition 
-                  key={this.props.location.key}
-                  timeout={300}
-                  classNames='fade'>
-              <Switch location={this.props.location}>
+                <CSSTransition 
+                    key={this.props.location.key}
+                    timeout={300}
+                    classNames='fade'>
+                <Switch location={this.props.location}>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/second" component={Second} />
-              </Switch>
-            </CSSTransition>  
-          </TransitionGroup>  
+                </Switch>
+                </CSSTransition>
+            </TransitionGroup>
         )
     }
 }

@@ -62,12 +62,12 @@ body {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
-.fade-leave {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+.fade_prev-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
 }
 
-.fade-leave-active {
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
+.fade_prev-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }

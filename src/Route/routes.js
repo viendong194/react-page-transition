@@ -7,13 +7,16 @@ import Home from '../pages/home';
 import Second from '../pages/second';
 
 class Routes extends Component {
+    componentDidUpdate(){
+        console.log(this.props.location);
+    }
     render(){
         return(
             <TransitionGroup>
             <CSSTransition 
-                  key={this.props.location.key}
+                  key={this.props.location.pathname}
                   timeout={300}
-                  classNames='fade'>
+                  classNames={this.props.location.state?"fade_prev":"fade"}>
               <Switch location={this.props.location}>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/second" component={Second} />

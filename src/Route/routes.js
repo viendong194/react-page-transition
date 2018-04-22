@@ -13,23 +13,17 @@ class Routes extends Component {
     render(){
         return(
             <TransitionGroup>
-<<<<<<< HEAD
             <CSSTransition 
                   key={this.props.location.pathname}
                   timeout={300}
-                  classNames={this.props.location.state?"fade_prev":"fade"}>
+                  classNames={this.props.location.state?"fade_prev":"fade"}
+                  onEnter={()=> this.isShow=false}
+                  onExited={()=>this.isShow=true}>
               <Switch location={this.props.location}>
-=======
-                <CSSTransition 
-                    key={this.props.location.key}
-                    timeout={300}
-                    classNames='fade'>
-                <Switch location={this.props.location}>
->>>>>>> c67268ea692b2588d79ef588fc294e87be239c08
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" render={(props)=><Home {...props} isShow={this.isShow}/>} />
                 <Route exact path="/second" component={Second} />
                 </Switch>
-                </CSSTransition>
+            </CSSTransition>
             </TransitionGroup>
         )
     }
